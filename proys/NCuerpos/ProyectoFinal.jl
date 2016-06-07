@@ -593,9 +593,10 @@ function Integrador_Restringido(masas, p0, v0, tf::Float64, p=28)
         h2 = paso_int(Taylor_arr_y1)
 
         h3 = paso_int(Taylor_arr_z1)
-        h4 = paso_int(Taylor_arr_z2)
 
         h5 = paso_int(Taylor_arr_vx1)
+        
+        h4 = paso_int(Taylor_arr_vy1)
 
         h6 = paso_int(Taylor_arr_vz1)
 
@@ -638,5 +639,5 @@ function Integrador_Restringido(masas, p0, v0, tf::Float64, p=28)
     cuerpo1 = typeof(p1)[p1, v1]
 
 
-    ts, cuerpo1
+    ts, cuerpo1, mu, alpha
 end
